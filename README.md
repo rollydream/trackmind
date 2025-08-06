@@ -1,5 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&height=150&text=&fontAlignY=40&color=gradient&fontSize=40)
-# 설치
+# 설치 :high_brightness::sunflower::baby_chick:
 ## 0. pnpm
 ```js 
 npm install -g pnpm
