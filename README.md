@@ -13,7 +13,7 @@ pnpm create vite frontend --template react
 ```
 ## 3. Zustand
 ```js 
-pnpm add zustand`<br> 
+pnpm add zustand
 pnpm add react-router-dom
 ```
 ## 4. Chart

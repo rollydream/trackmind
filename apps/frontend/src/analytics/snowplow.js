@@ -1,9 +1,8 @@
-// src/analytics/snowplow.js
 import { newTracker, trackPageView, trackSelfDescribingEvent } from "@snowplow/browser-tracker";
 import { ActivityTrackingPlugin } from "@snowplow/browser-plugin-activity-tracking";
 import { PageViewTrackingPlugin } from "@snowplow/browser-plugin-page-view-tracking";
 
-// ✅ Snowplow 초기화
+// Snowplow 초기화
 export const initSnowplow = () => {
   const SNOWPLOW_COLLECTOR = import.meta.env.VITE_SNOWPLOW_ENDPOINT; // 환경변수
   if (!SNOWPLOW_COLLECTOR) {
@@ -12,7 +11,7 @@ export const initSnowplow = () => {
   }
 
   newTracker("sp", SNOWPLOW_COLLECTOR, {
-    appId: "my-analytics-app",
+    appId: "analytics",
     plugins: [
       ActivityTrackingPlugin({ minimumVisitLength: 30, heartbeatDelay: 10 }),
       PageViewTrackingPlugin(),
@@ -21,10 +20,10 @@ export const initSnowplow = () => {
 
   // 기본 페이지뷰
   trackPageView();
-  console.log("✅ Snowplow Initialized:", SNOWPLOW_COLLECTOR);
+  console.log("Snowplow Initialized:", SNOWPLOW_COLLECTOR);
 };
 
-// ✅ 커스텀 이벤트 추적
+// 커스텀 이벤트 추적
 export const trackCustomEvent = (schema, data) => {
   trackSelfDescribingEvent({ schema, data });
 };
